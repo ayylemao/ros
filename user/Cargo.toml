@@ -1,0 +1,33 @@
+[package]
+name = "user"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+sys = { path = "../sys" }
+user_rt = { path = "../user_rt" }
+
+
+[[bin]]
+name = "init"
+path = "src/init/main.rs"
+
+[[bin]]
+name = "ls"
+path = "src/ls/main.rs"
+
+[[bin]]
+name = "cat"
+path = "src/cat/main.rs"
+
+[[bin]]
+name = "shell"
+path = "src/shell/main.rs"
+
+[[bin]]
+name = "sched_demo"
+path = "src/sched_demo/main.rs"
+
+[[bin]]
+name = "task_demo"
+path = "src/sched_demo/task.rs"

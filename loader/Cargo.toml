@@ -1,0 +1,10 @@
+[package]
+name = "loader"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+uefi = {version = "0.36.1", features = ["panic_handler", "alloc", "global_allocator", "logger"]}
+shared = { path = "../shared" }
+elf = { version = "0.8", default-features = false}
+

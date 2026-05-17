@@ -1,0 +1,2 @@
+#!shell
+cat /proc/meminfo

@@ -1,0 +1,22 @@
+{
+  "rust-analyzer.cargo.buildScripts.useRustcWrapper": false,
+  "rust-analyzer.cargo.extraEnv": {
+    "RUSTUP_TOOLCHAIN": "nightly-2025-10-03"
+  },
+
+  "rust-analyzer.check.allTargets": false,
+
+  "rust-analyzer.cargo.extraArgs": [
+    "-Z",
+    "unstable-options",
+  ],
+
+  "rust-analyzer.check.extraArgs": [
+    "-Z",
+    "build-std=core,alloc,compiler_builtins",
+    "-Z",
+    "build-std-features=compiler-builtins-mem",
+    "--target",
+    "kernel/x86_64-ros-kernel.json"
+  ]
+}

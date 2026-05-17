@@ -1,0 +1,13 @@
+/target
+*.img
+mnt/
+*.fd
+*.elf
+.git
+*.ttf
+*.tar
+initrfs/usr/sbin
+musl
+initrfs/usr/bin
+toybox/
+initrfs/muslt

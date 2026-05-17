@@ -1,0 +1,37 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lazy_static = {version = "1.5.0", features = ["spin_no_std"]}
+linked_list_allocator = "0.10.5"
+pc-keyboard = "0.8.0"
+shared = { path = "../shared" }
+sys = { path = "../sys" }
+spin = "0.10.0"
+tar-no-std = "0.4.2"
+x86_64 = "0.15.4"
+elf = { version = "0.8.0", default-features = false }
+bitflags = "2.10.0"
+
+# Prevent LTO from deleting all code
+[profile.release]
+panic = "abort"
+lto = false
+opt-level = "z"
+codegen-units = 1
+
+[profile.dev]
+panic = "abort"
+
+# This is the real kernel code
+[lib]
+name = "kernel_lib"
+path = "src/lib.rs"
+crate-type = ["rlib"]
+
+# This produces the ELF that the bootloader loads
+[[bin]]
+name = "kernel"
+path = "src/main.rs"

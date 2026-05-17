@@ -1,0 +1,13 @@
+[unstable]
+build-std = ["core", "alloc", "compiler_builtins"]
+build-std-features = ["compiler-builtins-mem"]
+
+[build]
+target = "kernel/x86_64-ros-kernel.json"
+
+[target.x86_64-ros-kernel]
+rustflags = [
+  "-Z", "unstable-options",
+  "-C", "link-arg=-Tkernel/linker.ld",
+  "-C", "code-model=kernel"
+]

@@ -1,0 +1,22 @@
+[workspace]
+members = [
+    "loader",
+    "kernel",
+    "shared",
+    "sys",
+    "user"
+, "user_rt"]
+
+# Use resolver 2 or 3 — NOT defaulting to 1
+resolver = "2"
+
+# Workspace-wide profiles (you must move profile settings here)
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+opt-level = "z"
+lto = true
+strip = true
+

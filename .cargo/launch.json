@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "UEFI Debug (LLDB)",
+            "type": "lldb",
+            "request": "custom",
+
+            "targetCreateCommands": [
+                // load EFI file + PDB symbols
+                "target create --arch x86_64 ${workspaceFolder}/target/x86_64-unknown-uefi/debug/loader.efi --symfile ${workspaceFolder}/target/x86_64-unknown-uefi/debug/loader.pdb"
+            ],
+
+            "processCreateCommands": [
+                "gdb-remote localhost:1234"
+            ],
+
+            "initCommands": [
+                "settings set stop-disassembly-display never"
+            ]
+        }
+    ]
+}

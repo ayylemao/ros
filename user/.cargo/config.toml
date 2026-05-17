@@ -1,0 +1,13 @@
+[build]
+target = "x86_64-ros_kernel.json"
+rustflags = ["-C", "link-arg=-e", "-C", "link-arg=_start"]
+
+[profile.release]
+panic = "abort"
+lto = false
+opt-level = "z"
+codegen-units = 1
+
+[profile.dev]
+panic = "abort"
+

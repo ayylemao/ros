@@ -1,0 +1,10 @@
+[package]
+name = "sys"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bitflags = "2.10.0"
+num_enum = { version = "0.7.5", default-features = false }
+spin = "0.10.0"
+talc = "4.4.3"
