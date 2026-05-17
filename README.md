@@ -2,7 +2,7 @@
 
 This repository is a Rust-based operating system technical exploration project.
 
-[![Watch the video](https://raw.githubusercontent.com/ayylemao/ros/main/media/demo.gif)]([https://raw.githubusercontent.com/username/repository/branch/path/to/video.mp4](https://raw.githubusercontent.com/ayylemao/ros/main/media/demo.webm))
+[![Watch the video](https://raw.githubusercontent.com/ayylemao/ros/main/media/demo.gif)](https://raw.githubusercontent.com/ayylemao/ros/main/media/demo.mp4))
 
 It is an experimental `x86_64` OS with a project-specific UEFI loader, a monolithic kernel, preemptive-ish task scheduling, a small syscall layer, a virtual filesystem, an initramfs, and a primitive but real userspace with an `init` process and shell-like programs. The loader is not a firmware replacement or a full boot ecosystem; it is a Rust UEFI application that uses the UEFI bindings to load the kernel, prepare boot information, set up the initial address space, and jump into the kernel.
 
