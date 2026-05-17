@@ -2,7 +2,7 @@
 
 This repository is a Rust-based operating system technical exploration project.
 
-[Watch the demo](media/demo.webm)
+[![Watch the demo](media/demo.gif)](media/demo.webm)
 
 It is an experimental `x86_64` OS with a project-specific UEFI loader, a monolithic kernel, preemptive-ish task scheduling, a small syscall layer, a virtual filesystem, an initramfs, and a primitive but real userspace with an `init` process and shell-like programs. The loader is not a firmware replacement or a full boot ecosystem; it is a Rust UEFI application that uses the UEFI bindings to load the kernel, prepare boot information, set up the initial address space, and jump into the kernel.
 
@@ -47,17 +47,6 @@ The default target builds the userspace programs, packages the initramfs, builds
 
 ```sh
 make
-```
-
-Other useful targets include:
-
-```sh
-make build
-make run
-make debug
-make debug-lldb
-make release
-make clean
 ```
 
 The build expects a Rust nightly toolchain compatible with the custom targets used by the project. The `Makefile` currently uses:
